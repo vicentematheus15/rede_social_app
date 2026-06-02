@@ -1,5 +1,6 @@
 import './home.css';
 import {useState} from "react"
+import LoginPopUp from './popUp';
 
 function HomePage(){
 
@@ -11,7 +12,8 @@ function HomePage(){
                 <button className="logButton" onClick={() =>{setShowPopUp(true)}} >Login</button>
             </header>
             <aside className="sidebar">Menu Lateral</aside>
-            <main>
+            <main className='content'>
+                <LoginPopUp showPopUp={showPopUp} closePopUp={() => setShowPopUp(false)}></LoginPopUp>
                 <div className="post">Post 1</div>
                 <div className="post">Post 2</div>
             </main>
